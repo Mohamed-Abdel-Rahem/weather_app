@@ -36,7 +36,7 @@ class HomeView extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
-      body: NoWeatherBody(),
+      body: const NoWeatherBody(),
     );
   }
 }

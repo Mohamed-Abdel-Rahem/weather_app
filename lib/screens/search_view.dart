@@ -32,7 +32,8 @@ class SearchView extends StatelessWidget {
                 ).getCurrentWeather(
                   cityName: value,
                 );
-                log(weatherModel.maxTemp.toString());
+                log(weatherModel.cityName);
+                Navigator.pop(context);
               },
               maxLength: 20,
               decoration: const InputDecoration(
