@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'package:weather_app/models/weather_model.dart';
 import 'package:weather_app/widgets/text_widget.dart';
 
 class WeatherInfoBody extends StatelessWidget {
@@ -6,6 +9,7 @@ class WeatherInfoBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var weatherModel = BlocProvider.of<GetWeatherCubit>(context).weatherModel;
     return Scaffold(
       /*  appBar: AppBar(
         title: const TextWidget(
@@ -20,14 +24,14 @@ class WeatherInfoBody extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const TextWidget(
-              text: "Cairo",
+            TextWidget(
+              text: weatherModel.cityName,
               color: Colors.black,
               size: 32,
               fontWeight: true,
             ),
-            const TextWidget(
-              text: "updated at 23:46",
+            TextWidget(
+              text: weatherModel.date,
               color: Colors.black,
               size: 24,
             ),
@@ -37,8 +41,8 @@ class WeatherInfoBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(
-                  'assets/images/cloudy.png',
+                Image.network(
+                  weatherModel.image.toString(),
                 ),
                 const TextWidget(
                   text: "17",
