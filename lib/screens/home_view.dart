@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return SearchView();
+                    return const SearchView();
                   },
                 ),
               );
