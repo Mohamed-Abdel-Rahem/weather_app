@@ -42,23 +42,23 @@ class WeatherInfoBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.network(
-                  weatherModel.image.toString(),
+                  'https:${weatherModel.image!}',
                 ),
-                const TextWidget(
-                  text: "17",
+                TextWidget(
+                  text: weatherModel.temp.toString(),
                   color: Colors.black,
                   size: 32,
                   fontWeight: true,
                 ),
-                const Column(
+                Column(
                   children: [
                     TextWidget(
-                      text: "Maxtemp: 24",
+                      text: 'Maxtemp: ${weatherModel.maxTemp}',
                       color: Colors.black,
                       size: 16,
                     ),
                     TextWidget(
-                      text: "Mintemp: 16",
+                      text: 'Mintemp: ${weatherModel.minTemp}',
                       color: Colors.black,
                       size: 16,
                     ),
@@ -69,8 +69,8 @@ class WeatherInfoBody extends StatelessWidget {
             const SizedBox(
               height: 32,
             ),
-            const TextWidget(
-              text: "Ligh Rain",
+            TextWidget(
+              text: weatherModel.weatherCondition,
               color: Colors.black,
               size: 32,
               fontWeight: true,
