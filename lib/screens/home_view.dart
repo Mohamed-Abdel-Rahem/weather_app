@@ -47,3 +47,11 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
+/*
+1- create states 
+2- create cubit 
+3- create function 
+4- provide cubit 
+5- integrate cubit 
+6- trigger cubit
+*/
