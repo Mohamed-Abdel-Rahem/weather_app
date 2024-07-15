@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/screens/search_view.dart';
 import 'package:weather_app/widgets/text_widget.dart';
 
 class WeatherInfoBody extends StatelessWidget {
@@ -20,8 +21,8 @@ class WeatherInfoBody extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const TextWidget(
-              text: "Alexandria",
+            TextWidget(
+              text: weatherModel!.cityName.toString(),
               color: Colors.black,
               size: 32,
               fontWeight: true,
