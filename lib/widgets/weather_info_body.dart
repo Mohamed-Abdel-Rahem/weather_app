@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
-import 'package:weather_app/models/weather_model.dart';
 import 'package:weather_app/widgets/text_widget.dart';
 
 class WeatherInfoBody extends StatelessWidget {
@@ -10,6 +9,7 @@ class WeatherInfoBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var weatherModel = BlocProvider.of<GetWeatherCubit>(context).weatherModel;
+    weatherModel.image!.contains('https');
     return Scaffold(
       /*  appBar: AppBar(
         title: const TextWidget(
@@ -31,7 +31,8 @@ class WeatherInfoBody extends StatelessWidget {
               fontWeight: true,
             ),
             TextWidget(
-              text: weatherModel.date,
+              text:
+                  'updated at ${weatherModel.date.hour}:${weatherModel.date.minute}',
               color: Colors.black,
               size: 24,
             ),
@@ -53,12 +54,12 @@ class WeatherInfoBody extends StatelessWidget {
                 Column(
                   children: [
                     TextWidget(
-                      text: 'Maxtemp: ${weatherModel.maxTemp}',
+                      text: 'Maxtemp: ${weatherModel.maxTemp.round()}',
                       color: Colors.black,
                       size: 16,
                     ),
                     TextWidget(
-                      text: 'Mintemp: ${weatherModel.minTemp}',
+                      text: 'Mintemp: ${weatherModel.minTemp.round()}',
                       color: Colors.black,
                       size: 16,
                     ),
@@ -80,4 +81,8 @@ class WeatherInfoBody extends StatelessWidget {
       ),
     );
   }
+}
+
+DateTime stringToDateTime(String value) {
+  return DateTime.parse(value);
 }

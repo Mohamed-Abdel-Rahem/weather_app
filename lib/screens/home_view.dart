@@ -37,12 +37,10 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
         ],
-        title: const TextWidget(
-          text: "Weather App",
-          color: Colors.white,
-          size: 30,
+        title: const Text(
+          "Weather App",
+          style: TextStyle(fontSize: 30),
         ),
-        backgroundColor: Colors.blue,
       ),
       body:
           BlocBuilder<GetWeatherCubit, WeatherState>(builder: (context, state) {

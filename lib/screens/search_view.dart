@@ -12,10 +12,9 @@ class SearchView extends StatelessWidget {
       appBar: AppBar(
         title: const TextWidget(
           text: "Search a City",
-          color: Colors.white,
+          color: Colors.black,
           size: 30,
         ),
-        backgroundColor: Colors.amber,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -51,16 +50,16 @@ class SearchView extends StatelessWidget {
                     color: Colors.red,
                   ),
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.black,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.amber,
-                  ),
-                ),
+                // enabledBorder: OutlineInputBorder(
+                //   borderSide: BorderSide(
+                //     color: Colors.black,
+                //   ),
+                // ),
+                // focusedBorder: OutlineInputBorder(
+                //   borderSide: BorderSide(
+                //     color: Colors.amber,
+                //   ),
+                // ),
               ),
             ),
           ),
