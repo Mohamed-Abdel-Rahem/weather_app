@@ -14,14 +14,6 @@ class WeatherInfoBody extends StatelessWidget {
         BlocProvider.of<GetWeatherCubit>(context).weatherModel!;
     weatherModel.image!.contains('https');
     return Scaffold(
-      /*  appBar: AppBar(
-        title: const TextWidget(
-          text: "Weather App",
-          color: Colors.white,
-          size: 30,
-        ),
-        backgroundColor: Colors.blue,
-      ),*/
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
