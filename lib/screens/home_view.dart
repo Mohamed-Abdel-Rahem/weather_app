@@ -4,7 +4,6 @@ import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_states.dart';
 import 'package:weather_app/screens/search_view.dart';
 import 'package:weather_app/widgets/no_weather_body.dart';
-import 'package:weather_app/widgets/text_widget.dart';
 import 'package:weather_app/widgets/weather_info_body.dart';
 
 class HomeView extends StatefulWidget {
@@ -49,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
         } else if (state is WeatherLoadedState) {
           return WeatherInfoBody();
         } else {
-          return const Text('opps there was an error!');
+          return const Center(child: Text('opps there was an error!'));
         }
       }),
     );

@@ -25,7 +25,7 @@ class NoWeatherBody extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),*/
-      body: const Padding(
+      body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
